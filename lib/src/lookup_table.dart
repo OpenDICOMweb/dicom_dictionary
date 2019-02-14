@@ -10,6 +10,7 @@ import 'package:xml/xml.dart' as xml;
 
 import 'package:dcmdict/src/olinks.dart';
 
+/// Get an XML Table with [tableId] from a [part] of the DICOM Standard.
 xml.XmlElement getTable(String part, String tableId) {
   final inFile = File(part);
   final inText = inFile.readAsStringSync();
@@ -23,12 +24,14 @@ xml.XmlElement getTable(String part, String tableId) {
   return null;
 }
 
+/// Get the XML Attribute with [name] from [e].
 String getAttribute(xml.XmlElement e, String name) {
   final attrs = e.attributes;
   final a = attrs.firstWhere((x) => x.name.toString() == name);
   return a.value;
 }
 
+/// Get the XML Table Headers from [table].
 List<String> getHeaders(xml.XmlElement table) {
   final tHead = table.findElements('thead');
   final ths = tHead.single.findAllElements('th');
@@ -41,6 +44,7 @@ List<String> getHeaders(xml.XmlElement table) {
   return values;
 }
 
+/// Get the XML Rows from [table] in [part] of the DICOM Standard.
 List<List<String>> getRows(String part, xml.XmlElement table) {
   final tBody = table.findElements('tbody');
   final trs = tBody.single.findAllElements('tr');
@@ -91,9 +95,11 @@ List<List<String>> getRows(String part, xml.XmlElement table) {
   return rows;
 }
 
+/// Returns true if [s] is a Tag code.
 bool isTag(String s) =>
     s.length == 11 && s[0] == '(' && s[5] == ',' && s[10] == ')';
 
+/// Return a hexadecimal [String] corresponding to [tag].
 String tagToHex(String tag) {
   if (!isTag(tag)) throw 'Invalid Tag: "$tag"';
   var hex = tag.replaceFirst('(', '');
@@ -102,6 +108,7 @@ String tagToHex(String tag) {
   return '0x$hex';
 }
 
+/// Returns the XML Element with [label] from [elements].
 xml.XmlElement elementWithLabel(List<xml.XmlElement> elements, String label) {
   for (var e in elements) {
     final name = getAttribute(e, 'label');
