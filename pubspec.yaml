@@ -1,0 +1,20 @@
+name: dcmdict
+version: 0.1.0
+description: A package for parsing dicom docbook files into JSON
+author: Jim Philbin <jfphilbin@gmail.com>
+
+homepage: https://github.com/OpenDICOMweb/ddictionary
+
+environment:
+  sdk: '>=2.0.0 < 3.0.0'
+
+dependencies:
+  xml: any
+
+dev_dependencies:
+  benchmark_harness: any
+  coverage: any
+  grinder: ^0.8.0
+  path: ^1.6.2
+  test: any
+  xml2json: ^3.0.0
