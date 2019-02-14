@@ -13,7 +13,7 @@ import 'package:dcmdict/src/lookup_table.dart';
 const String part6xml =
     'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part06/part06.xml';
 
-final thisPartLink = standardOLinks['PS3.6'];
+final String thisPartLink = standardOLinks['PS3.6'];
 
 void main() {
   final inFile = File(part6xml);

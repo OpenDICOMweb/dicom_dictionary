@@ -25,7 +25,7 @@ xml.XmlElement getTable(String part, String tableId) {
 
 String getAttribute(xml.XmlElement e, String name) {
   final attrs = e.attributes;
-  final a = attrs.firstWhere((xml.XmlAttribute x) => x.name.toString() == name);
+  final a = attrs.firstWhere((x) => x.name.toString() == name);
   return a.value;
 }
 
@@ -54,8 +54,8 @@ List<List<String>> getRows(String part, xml.XmlElement table) {
 //      if (para != null && para.isNotEmpty) {
 //        final paraId = para.single.getAttribute('xml:id');
 //      }
-      String olink = '';
-      String link = '';
+      var oLink = '';
+      var link = '';
       var text = td.text.trim();
       if (isTag(text)) text = tagToHex(text);
 
@@ -63,7 +63,7 @@ List<List<String>> getRows(String part, xml.XmlElement table) {
       if (olinks != null && olinks.isNotEmpty) {
         final slink = standardOLinks[getAttribute(olinks.single, 'targetdoc')];
         final ptr = getAttribute(olinks.single, 'targetptr');
-        olink = '|$slink#$ptr';
+        oLink = '|$slink#$ptr';
       }
 
       final links = td.findAllElements('link');
@@ -75,13 +75,13 @@ List<List<String>> getRows(String part, xml.XmlElement table) {
       final xrefs = td.findAllElements('xref');
       if (xrefs != null && xrefs.isNotEmpty) {
         final linkEnd = getAttribute(xrefs.single, 'linkend');
-        text = ('sect_'.matchAsPrefix(linkEnd) == true)
+        text = 'sect_'.matchAsPrefix(linkEnd) == null
             ? linkEnd.substring(5)
             : linkEnd;
 //        print('X: $text');
         link = '|$part#$linkEnd';
       }
-      final v = '$text$olink$link';
+      final v = '$text$oLink$link';
 //      print(v);
       values.add(v);
     }

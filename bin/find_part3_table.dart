@@ -13,7 +13,7 @@ import 'package:dcmdict/src/lookup_table.dart';
 const String part3xml =
     'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part03/part03.xml';
 
-final thisPartLink = standardOLinks['PS3.6'];
+final String thisPartLink = standardOLinks['PS3.6'];
 
 void main() {
   final inFile = File(part3xml);
@@ -22,7 +22,7 @@ void main() {
   final tables = document.findAllElements('table');
   print('N Tables: ${tables.length}');
 
-  final id = 'table_C.7-1';
+  const id = 'table_C.7-1';
   final table = getTable(part3xml, id);
   final headers = getHeaders(table);
   final rows = getRows(part3, table);

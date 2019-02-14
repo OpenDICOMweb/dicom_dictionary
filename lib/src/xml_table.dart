@@ -33,7 +33,7 @@ class XmlTable {
   XmlTable(this.table) : attributes = table.attributes;
 
   String _getAttrValue(String name) =>
-      attributes.firstWhere((a) => a.name == 'label').value;
+      attributes.firstWhere((a) => a.name.local == 'label').value;
 
   String get label => _getAttrValue('label');
 
