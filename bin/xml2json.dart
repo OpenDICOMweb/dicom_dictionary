@@ -10,6 +10,9 @@ import 'package:xml2json/xml2json.dart';
 const String part6xml =
     'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part06/part06.xml';
 
+const String outputDir =
+    'C:/odw/dicom_dictionary/output';
+
 void main() {
   // Create a client transformer
   final myTransformer = Xml2Json();
@@ -25,21 +28,19 @@ void main() {
 
   // Transform to JSON using Badgerfish
   var json = myTransformer.toBadgerfish();
-  print('Badgerfish');
-  print('');
+  print('Badgerfish\n\t');
+  File('$outputDir/badger_fish.json').writeAsStringSync(json);
   print(json);
-  print('');
 
   // Transform to JSON using GData
   json = myTransformer.toGData();
-  print('GData');
-  print('');
+  print('GData\n\t');
+  File('$outputDir/g_data.json').writeAsStringSync(json);
   print(json);
-  print('');
 
   // Transform to JSON using Parker
   json = myTransformer.toParker();
-  print('Parker');
-  print('');
+  print('Parker\n\t');
+  File('$outputDir/parker.json').writeAsStringSync(json);
   print(json);
 }

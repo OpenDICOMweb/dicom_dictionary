@@ -106,8 +106,8 @@
     <para xml:id="para_d61da3a1-0191-4b41-b1c2-873f49cb9d53">The following standards contain provisions that, through references in this text, constitute provisions of this standard. At the time of publication, the editions indicated were valid. All standards are subject to revision, and parties to agreements based on this standard are encouraged to investigate the possibilities of applying the most recent editions of the standards indicated below.</para>
     <bibliography>
       <title/>
-      
-        
+
+
         <biblioentry xml:id="biblio_ANSIHISPPMSDS">
           <abbrev>ANSI HISPP MSDS</abbrev>
           <author>
@@ -440,7 +440,7 @@
           </author>
           <date>1997</date>
           <title>Lossless and near-lossless coding of continuous tone still images (JPEG-LS)</title>
-        </biblioentry>      
+        </biblioentry>
         <biblioentry xml:id="biblio_ISOIEC14496-3">
           <abbrev>ISO/IEC 14496-3</abbrev>
           <author>
@@ -636,7 +636,7 @@
           <link xl:href="http://tools.ietf.org/html/rfc5891"/>
         </bibliosource>
       </biblioentry>
-      
+
     </bibliography>
   </chapter>
   <chapter label="3" status="1" xml:id="chapter_3">
@@ -2079,7 +2079,7 @@
               </listitem>
             </orderedlist>
           </note>
-          
+
         </section>
         <section label="6.2.1.2" status="4" xml:id="sect_6.2.1.2">
           <title>Ideographic and Phonetic Characters in Data Elements with VR of PN</title>
@@ -3468,7 +3468,7 @@
               </td>
             </tr>
           </tbody>
-        </table> 
+        </table>
         <table frame="box" label="8.2.1-2" rules="all" xml:id="table_8.2.1-2">
           <caption>Valid Values of Pixel Data Related Attributes for JPEG Lossless Transfer Syntaxes using Standard Photometric Interpretations</caption>
           <thead>
@@ -4182,7 +4182,7 @@
               </td>
             </tr>
           </tbody>
-        </table> 
+        </table>
         <note>
           <para xml:id="para_0e5c196d-7b04-42b4-9c18-22c0162d12ca">These requirements are specified in terms of consistency with what is encapsulated, rather than in terms of the uncompressed pixel data from which the compressed data stream may have been derived.</para>
         </note>
@@ -4567,7 +4567,7 @@
         </note>
         <table frame="box" label="8-3" rules="all" xml:id="table_8-3">
           <caption>Examples of MPEG2 Main Profile / High Level Screen Resolution</caption>
-          <tr valign="top">
+          <thead valign="top">
             <th align="center" colspan="1" rowspan="1">
               <para xml:id="para_d1184f95-1bb2-47f2-b11b-d71f49203153">
                 <emphasis role="bold">Rows</emphasis>
@@ -4593,7 +4593,8 @@
                 <emphasis role="bold">Progressive or Interlace</emphasis>
               </para>
             </th>
-          </tr>
+          </thead>
+          <tbody>
           <tr valign="top">
             <td align="center" colspan="1" rowspan="1">
               <para xml:id="para_d2484010-a54b-4413-8620-2d32045ddc7c">1080</para>
@@ -4730,6 +4731,7 @@
               <para xml:id="para_451ef753-6f73-46ae-a68a-f05eb4d62832">P</para>
             </td>
           </tr>
+          </tbody>
         </table>
         <para xml:id="para_1065d7c1-2093-40ad-88d7-6e9fe230b153">One fragment shall contain the whole MPEG2 bit stream.</para>
         <note>
@@ -7099,7 +7101,7 @@
     <section label="A.6" status="2" xml:id="sect_A.6">
       <title>DICOM JPIP Referenced Transfer Syntax (Explicit VR)</title>
       <para xml:id="para_02dea79d-abb0-4c5f-8a33-d2e144a2ed12">This Transfer Syntax applies to the encoding of the entire DICOM Data Set.
-        This Transfer Syntax shall only be used when Pixel Data (7FE0,0010) is present in the top level Data Set, and hence shall not be used when Float Pixel Data (7FE0,0008) or Double Float Pixel Data (7FE0,0009) are present. 
+        This Transfer Syntax shall only be used when Pixel Data (7FE0,0010) is present in the top level Data Set, and hence shall not be used when Float Pixel Data (7FE0,0008) or Double Float Pixel Data (7FE0,0009) are present.
         This implies that when a DICOM Data Set is being encoded with the DICOM Little Endian Transfer Syntax the following requirements shall be met:</para>
       <orderedlist numeration="loweralpha">
         <listitem>
@@ -7439,7 +7441,7 @@
     </section>
     <section label="D.3" status="2" xml:id="sect_D.3">
       <title>Examples of Float and Double Float Pixel Data</title>
-      
+
       <para xml:id="para_34948a5a-269f-4291-9837-c569e451e375">Float Pixel Data having the Value Representation OF always has 32 bits allocated; the resulting byte streams pictured in <xref linkend="figure_D.3-1" xrefstyle="select: label"/> are as they would be transmitted across a network and/or stored on media.</para>
       <para xml:id="para_163e3bac-a3ae-444d-b105-3c315ccf40e4">
         <figure label="D.3-1" pgwide="1" xml:id="figure_D.3-1">
@@ -8604,7 +8606,7 @@
           10918-2 Section 5.1.1 Non-hierarchical coding processes syntax compliance test
           Tables 1 and 2).</para>
       </note>
-      
+
     </section>
     <section label="F.2" status="2" xml:id="sect_F.2">
       <title>Encapsulated JPEG-LS Encoded Images</title>
@@ -8796,6 +8798,7 @@
       <para xml:id="para_3dc3ed19-0eb0-465e-b3c4-4cfe21321ce8">The following diagram illustrates the ordering of the offsets within the RLE Header.</para>
       <table frame="box" label="G.5-1" rules="all" xml:id="table_G.5-1">
         <caption>Ordering of the Offsets Within the RLE Header</caption>
+        <tbody>
         <tr valign="top">
           <td align="center" colspan="1" rowspan="1">
             <para xml:id="para_8b2353aa-4454-400c-bb1e-e9324a24f890">number of RLE Segments</para>
@@ -8845,6 +8848,7 @@
             <para xml:id="para_5f48efec-9d60-4c57-b425-39c145822247">0</para>
           </td>
         </tr>
+        </tbody>
       </table>
     </section>
     <section label="G.6" status="2" xml:id="sect_G.6">
