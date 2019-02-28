@@ -17,7 +17,7 @@ xml.XmlElement getTable(String part, String tableId) {
   final document = xml.parse(inText);
   final tables = document.findAllElements('table');
 
-  for (var table in tables) {
+  for (final table in tables) {
     final v = getAttribute(table, 'xml:id');
     if (v == tableId) return table;
   }
@@ -37,7 +37,7 @@ List<String> getHeaders(xml.XmlElement table) {
   final ths = tHead.single.findAllElements('th');
   final values = <String>[];
 
-  for (var e in ths) {
+  for (final e in ths) {
     final value = e.text.trim();
     values.add(value);
   }
@@ -49,10 +49,10 @@ List<List<String>> getRows(String part, xml.XmlElement table) {
   final tBody = table.findElements('tbody');
   final trs = tBody.single.findAllElements('tr');
   final rows = <List<String>>[];
-  for (var row in trs) {
+  for (final row in trs) {
     final tds = row.findAllElements('td');
     final values = <String>[];
-    for (var td in tds) {
+    for (final td in tds) {
       // TODO: handle multiple paragraphs
 ///      final para = td.findAllElements('para');
 //      if (para != null && para.isNotEmpty) {
@@ -110,7 +110,7 @@ String tagToHex(String tag) {
 
 /// Returns the XML Element with [label] from [elements].
 xml.XmlElement elementWithLabel(List<xml.XmlElement> elements, String label) {
-  for (var e in elements) {
+  for (final e in elements) {
     final name = getAttribute(e, 'label');
     if (name == label) return e;
   }

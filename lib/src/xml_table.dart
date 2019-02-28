@@ -65,7 +65,7 @@ class XmlTable {
     final ths = thead.single.findAllElements('th');
 
     final values = <String>[];
-    for (var v in ths) {
+    for (final v in ths) {
       final td = '$v'.trim();
       if (td == '') continue;
       final value = v.text.trim();
@@ -82,7 +82,7 @@ class XmlTable {
     print('tds(${tds.length}): $tds');
     final values = <String>[];
 
-    for (var v in tds) {
+    for (final v in tds) {
       final td = '$v'.trim();
       if (td == '') continue;
       final value = v.text.trim();

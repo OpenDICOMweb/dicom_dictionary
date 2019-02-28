@@ -8,7 +8,7 @@ import 'dart:io';
 import 'package:xml2json/xml2json.dart';
 
 const String part6xml =
-    'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part06/part06.xml';
+    'C:/odw/dicom_dictionary/standard/source/docbook/part06/part06.xml';
 
 void main() {
   // Create a client transformer

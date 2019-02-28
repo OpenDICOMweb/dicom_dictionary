@@ -11,7 +11,7 @@ import 'package:dcmdict/src/olinks.dart';
 import 'package:dcmdict/src/lookup_table.dart';
 
 const String part6xml =
-    'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part06/part06.xml';
+    'C:/odw/dicom_dictionary/standard/source/docbook/part06/part06.xml';
 
 final String thisPartLink = standardOLinks['PS3.6'];
 
@@ -23,7 +23,7 @@ void main() {
   print('N Tables: ${tables.length}');
 
   var n = 0;
-  for (var table in tables) {
+  for (final table in tables) {
     final label = getAttribute(table, 'label');
     final id = getAttribute(table, 'xml:id');
     final title = table.findElements('caption').single.text;

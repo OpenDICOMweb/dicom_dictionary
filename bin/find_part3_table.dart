@@ -11,7 +11,7 @@ import 'package:dcmdict/src/olinks.dart';
 import 'package:dcmdict/src/lookup_table.dart';
 
 const String part3xml =
-    'C:/odw/dicom_dictionary/standard_2018d/source/docbook/part03/part03.xml';
+    'C:/odw/dicom_dictionary/standard/source/docbook/part03/part03.xml';
 
 final String thisPartLink = standardOLinks['PS3.6'];
 
