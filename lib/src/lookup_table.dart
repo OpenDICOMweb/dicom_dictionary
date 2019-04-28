@@ -101,7 +101,7 @@ bool isTag(String s) =>
 
 /// Return a hexadecimal [String] corresponding to [tag].
 String tagToHex(String tag) {
-  if (!isTag(tag)) throw 'Invalid Tag: "$tag"';
+  if (!isTag(tag)) throw ArgumentError('Invalid Tag: "$tag"');
   var hex = tag.replaceFirst('(', '');
   hex = hex.replaceFirst(',', '');
   hex = hex.replaceFirst(')', '');
